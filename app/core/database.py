@@ -1,12 +1,12 @@
 import logging
-from app import app
+from app import App
 import pymysql.cursors
 
 # https://github.com/cyberdelia/flask-mysql
 from flaskext.mysql import MySQL
 
 mysql = MySQL()
-mysql.init_app(app)
+mysql.init_app(App)
 
 
 def connect(cursor_type=pymysql.cursors.DictCursor):

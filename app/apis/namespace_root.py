@@ -1,18 +1,18 @@
 from flask import request
 from flask_restx import Namespace, Resource
 from app.core.database import connect
-from app import app
+from app import App
 import logging
 
 api = Namespace('Status', description='General info')
 
 # from .model import UserModel
 
-@app.before_request
+@App.before_request
 def before_request_func():
     logging.info('Request received')
 
-@app.after_request
+@App.after_request
 def after_request_func(response):
     logging.info('Request completed')
     return response
