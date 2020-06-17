@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-    db1:
+    db:
         image: mysql:8
         ports:
             - "3306:3306"
@@ -18,6 +18,6 @@ services:
         build:
             context: .
             dockerfile: docker/webapi/Dockerfile
-        image: radius-webapi
+        image: flaskrestx-webapi
         ports:
         - "8080:80"
